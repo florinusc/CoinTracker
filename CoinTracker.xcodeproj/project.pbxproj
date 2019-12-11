@@ -18,6 +18,13 @@
 		582A7D9523A0E8C4002E2263 /* MockRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9423A0E8C4002E2263 /* MockRepository.swift */; };
 		582A7D9723A0E9BA002E2263 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9623A0E9BA002E2263 /* CustomError.swift */; };
 		582A7D9923A0F3DA002E2263 /* CurrentPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9823A0F3DA002E2263 /* CurrentPrice.swift */; };
+		582A7D9C23A104A0002E2263 /* PriceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9A23A104A0002E2263 /* PriceListCell.swift */; };
+		582A7D9D23A104A0002E2263 /* PriceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582A7D9B23A104A0002E2263 /* PriceListCell.xib */; };
+		582A7D9F23A10501002E2263 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9E23A10501002E2263 /* NibLoadableView.swift */; };
+		582A7DA123A10518002E2263 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA023A10518002E2263 /* ReusableView.swift */; };
+		582A7DA423A10558002E2263 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA323A10558002E2263 /* UITableView+Extension.swift */; };
+		582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */; };
+		582A7DA823A1068B002E2263 /* PriceListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA723A1068B002E2263 /* PriceListCellViewModel.swift */; };
 		58644B2923A0D21900137378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2823A0D21900137378 /* AppDelegate.swift */; };
 		58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2A23A0D21900137378 /* SceneDelegate.swift */; };
 		58644B3023A0D21900137378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B2E23A0D21900137378 /* Main.storyboard */; };
@@ -47,6 +54,13 @@
 		582A7D9423A0E8C4002E2263 /* MockRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepository.swift; sourceTree = "<group>"; };
 		582A7D9623A0E9BA002E2263 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		582A7D9823A0F3DA002E2263 /* CurrentPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPrice.swift; sourceTree = "<group>"; };
+		582A7D9A23A104A0002E2263 /* PriceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListCell.swift; sourceTree = "<group>"; };
+		582A7D9B23A104A0002E2263 /* PriceListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PriceListCell.xib; sourceTree = "<group>"; };
+		582A7D9E23A10501002E2263 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		582A7DA023A10518002E2263 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		582A7DA323A10558002E2263 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		582A7DA723A1068B002E2263 /* PriceListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListCellViewModel.swift; sourceTree = "<group>"; };
 		58644B2523A0D21900137378 /* CoinTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58644B2823A0D21900137378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58644B2A23A0D21900137378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +93,11 @@
 		582A7D7623A0D69E002E2263 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				582A7DA223A10542002E2263 /* Extensions */,
 				582A7D7723A0D6A4002E2263 /* Protocols */,
 				582A7D9623A0E9BA002E2263 /* CustomError.swift */,
+				582A7D9E23A10501002E2263 /* NibLoadableView.swift */,
+				582A7DA023A10518002E2263 /* ReusableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -106,6 +123,9 @@
 		582A7D8D23A0E802002E2263 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				582A7D9A23A104A0002E2263 /* PriceListCell.swift */,
+				582A7D9B23A104A0002E2263 /* PriceListCell.xib */,
+				582A7DA723A1068B002E2263 /* PriceListCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -126,6 +146,15 @@
 				582A7D9423A0E8C4002E2263 /* MockRepository.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		582A7DA223A10542002E2263 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				582A7DA323A10558002E2263 /* UITableView+Extension.swift */,
+				582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		58644B1C23A0D21900137378 = {
@@ -289,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58644B3523A0D21D00137378 /* LaunchScreen.storyboard in Resources */,
+				582A7D9D23A104A0002E2263 /* PriceListCell.xib in Resources */,
 				58644B3223A0D21D00137378 /* Assets.xcassets in Resources */,
 				58644B3023A0D21900137378 /* Main.storyboard in Resources */,
 			);
@@ -310,12 +340,18 @@
 			files = (
 				582A7D8523A0DCF7002E2263 /* PriceListViewController.swift in Sources */,
 				58644B2923A0D21900137378 /* AppDelegate.swift in Sources */,
+				582A7DA423A10558002E2263 /* UITableView+Extension.swift in Sources */,
+				582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */,
 				582A7D9023A0E875002E2263 /* HistoricalPrice.swift in Sources */,
 				582A7D9323A0E8BB002E2263 /* Repository.swift in Sources */,
 				582A7D8723A0DD02002E2263 /* PriceListViewModel.swift in Sources */,
+				582A7DA123A10518002E2263 /* ReusableView.swift in Sources */,
+				582A7D9C23A104A0002E2263 /* PriceListCell.swift in Sources */,
 				582A7D9723A0E9BA002E2263 /* CustomError.swift in Sources */,
 				582A7D9923A0F3DA002E2263 /* CurrentPrice.swift in Sources */,
+				582A7DA823A1068B002E2263 /* PriceListCellViewModel.swift in Sources */,
 				582A7D7923A0D6B2002E2263 /* ViewModelBased.swift in Sources */,
+				582A7D9F23A10501002E2263 /* NibLoadableView.swift in Sources */,
 				58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */,
 				582A7D9523A0E8C4002E2263 /* MockRepository.swift in Sources */,
 				582A7D8323A0DA26002E2263 /* Storyboarded.swift in Sources */,

@@ -23,6 +23,7 @@ final class PriceListViewController: UIViewController, ViewModelBased {
     // MARK: - Private functions
     private func setup() {
         title = "Bitcoin price (EUR)"
+        tableView.register(PriceListCell.self)
     }
 }
 
@@ -32,7 +33,8 @@ extension PriceListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: PriceListCell = tableView.dequeueReusableCell()
+        return cell
     }
 }
 
