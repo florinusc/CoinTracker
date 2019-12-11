@@ -14,15 +14,48 @@ class PriceListViewModelTests: XCTestCase {
     }
     
     func test_getData_withoutError_errorIsNil() {
-        makeSUT().getData { (error) in
+        makeSUT().getHistoricalData { (error) in
             XCTAssertNil(error)
         }
     }
     
     func test_getData_withError_errorIsNotNil() {
-        makeSUT(true).getData { (error) in
+        makeSUT(true).getHistoricalData { (error) in
             XCTAssertNotNil(error)
         }
+    }
+    
+    func test_getData_withoutError_numberOfPricesIsCorrect() {
+        let viewModel = makeSUT()
+        viewModel.getHistoricalData { _ in }
+        XCTAssertEqual(viewModel.numberOfPrices, 6)
+    }
+    
+    func test_getData_withError_numberOfPricesIsZero() {
+        let viewModel = makeSUT(true)
+        viewModel.getHistoricalData { _ in }
+        XCTAssertEqual(viewModel.numberOfPrices, 0)
+    }
+    
+    func test_getCurrentPrice_withoutError_errorIsNil() {
+        let viewModel = makeSUT()
+        viewModel.getCurrentPrice { (error) in
+            XCTAssertNil(error)
+        }
+    }
+    
+    func test_getCurrentPrice_withError_errorIsNotNil() {
+        let viewModel = makeSUT(true)
+        viewModel.getCurrentPrice { (error) in
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func test_numberOfPrices_withHistoricalPricesAndCurrentPrice_isCorrect() {
+        let viewModel = makeSUT()
+        viewModel.getHistoricalData { _ in }
+        viewModel.getCurrentPrice { _ in }
+        XCTAssertEqual(viewModel.numberOfPrices, 7)
     }
     
     // MARK: - Helpers
