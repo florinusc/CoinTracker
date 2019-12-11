@@ -5,6 +5,14 @@
     
 
 import XCTest
-import CoinTracker
+@testable import CoinTracker
 
-class PriceListViewModelTests: XCTest {}
+class PriceListViewModelTests: XCTestCase {
+    
+    func test_numberOfPrices_isZeroInitially_isCorrect() {
+        let viewModel = PriceListViewModel()
+        
+        XCTAssertEqual(viewModel.numberOfPrices, 0)
+    }
+    
+}

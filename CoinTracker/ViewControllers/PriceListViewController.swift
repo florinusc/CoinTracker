@@ -22,7 +22,7 @@ class PriceListViewController: UIViewController, ViewModelBased {
     
     // MARK: - Private functions
     private func setup() {
-        title = "Bitcoin price"
+        title = "Bitcoin price (EUR)"
     }
 }
 
