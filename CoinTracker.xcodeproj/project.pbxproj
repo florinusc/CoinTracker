@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582A7D7923A0D6B2002E2263 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */; };
+		582A7D8323A0DA26002E2263 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8223A0DA26002E2263 /* Storyboarded.swift */; };
 		58644B2923A0D21900137378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2823A0D21900137378 /* AppDelegate.swift */; };
 		58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2A23A0D21900137378 /* SceneDelegate.swift */; };
-		58644B2D23A0D21900137378 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2C23A0D21900137378 /* ViewController.swift */; };
 		58644B3023A0D21900137378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B2E23A0D21900137378 /* Main.storyboard */; };
 		58644B3223A0D21D00137378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58644B3123A0D21D00137378 /* Assets.xcassets */; };
 		58644B3523A0D21D00137378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B3323A0D21D00137378 /* LaunchScreen.storyboard */; };
@@ -27,10 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
+		582A7D8223A0DA26002E2263 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		58644B2523A0D21900137378 /* CoinTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58644B2823A0D21900137378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58644B2A23A0D21900137378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58644B2C23A0D21900137378 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		58644B2F23A0D21900137378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58644B3123A0D21D00137378 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58644B3423A0D21D00137378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		582A7D7623A0D69E002E2263 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				582A7D7723A0D6A4002E2263 /* Protocols */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		582A7D7723A0D6A4002E2263 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */,
+				582A7D8223A0DA26002E2263 /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		58644B1C23A0D21900137378 = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +98,10 @@
 		58644B2723A0D21900137378 /* CoinTracker */ = {
 			isa = PBXGroup;
 			children = (
-				58644B2823A0D21900137378 /* AppDelegate.swift */,
-				58644B2A23A0D21900137378 /* SceneDelegate.swift */,
-				58644B2C23A0D21900137378 /* ViewController.swift */,
-				58644B2E23A0D21900137378 /* Main.storyboard */,
-				58644B3123A0D21D00137378 /* Assets.xcassets */,
-				58644B3323A0D21D00137378 /* LaunchScreen.storyboard */,
-				58644B3623A0D21D00137378 /* Info.plist */,
+				582A7D7623A0D69E002E2263 /* Helpers */,
+				58644B4D23A0D43B00137378 /* ViewControllers */,
+				58644B4B23A0D42000137378 /* Resources */,
+				58644B4A23A0D3C300137378 /* Project Files */,
 			);
 			path = CoinTracker;
 			sourceTree = "<group>";
@@ -97,6 +113,41 @@
 				58644B4123A0D21D00137378 /* Info.plist */,
 			);
 			path = CoinTrackerTests;
+			sourceTree = "<group>";
+		};
+		58644B4A23A0D3C300137378 /* Project Files */ = {
+			isa = PBXGroup;
+			children = (
+				58644B2823A0D21900137378 /* AppDelegate.swift */,
+				58644B2A23A0D21900137378 /* SceneDelegate.swift */,
+				58644B3623A0D21D00137378 /* Info.plist */,
+			);
+			path = "Project Files";
+			sourceTree = "<group>";
+		};
+		58644B4B23A0D42000137378 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58644B4C23A0D42900137378 /* Storyboards */,
+				58644B3123A0D21D00137378 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		58644B4C23A0D42900137378 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				58644B2E23A0D21900137378 /* Main.storyboard */,
+				58644B3323A0D21D00137378 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		58644B4D23A0D43B00137378 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +251,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58644B2D23A0D21900137378 /* ViewController.swift in Sources */,
 				58644B2923A0D21900137378 /* AppDelegate.swift in Sources */,
+				582A7D7923A0D6B2002E2263 /* ViewModelBased.swift in Sources */,
 				58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */,
+				582A7D8323A0DA26002E2263 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoinTracker/Info.plist;
+				INFOPLIST_FILE = "CoinTracker/Project Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoinTracker/Info.plist;
+				INFOPLIST_FILE = "CoinTracker/Project Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
