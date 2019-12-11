@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel())
+        let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: MockRepository()))
         let navigationController = UINavigationController(rootViewController: priceListViewController)
         window.rootViewController = navigationController
         self.window = window

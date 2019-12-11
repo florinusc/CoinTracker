@@ -15,7 +15,7 @@ class PriceListViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     func makeSUT() -> PriceListViewController {
-        let viewController = PriceListViewController.getInstance(with: PriceListViewModel())
+        let viewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: MockRepository()))
         _ = viewController.view
         return viewController
     }

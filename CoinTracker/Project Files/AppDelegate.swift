@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         guard #available(iOS 13.0, *) else {
             let window = UIWindow(frame: UIScreen.main.bounds)
-            let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel())
+            let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: MockRepository()))
             let navigationController = UINavigationController(rootViewController: priceListViewController)
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
