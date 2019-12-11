@@ -13,6 +13,17 @@ class PriceListViewController: UIViewController, ViewModelBased {
     
     // MARK: - Public variables
     var viewModel: PriceListViewModel!
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: - Private functions
+    private func setup() {
+        title = "Bitcoin price"
+    }
 }
 
 extension PriceListViewController: UITableViewDelegate, UITableViewDataSource {

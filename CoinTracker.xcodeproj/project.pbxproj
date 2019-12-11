@@ -92,6 +92,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		582A7D8D23A0E802002E2263 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		58644B1C23A0D21900137378 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +120,7 @@
 		58644B2723A0D21900137378 /* CoinTracker */ = {
 			isa = PBXGroup;
 			children = (
+				582A7D8D23A0E802002E2263 /* Cells */,
 				582A7D7623A0D69E002E2263 /* Helpers */,
 				58644B4D23A0D43B00137378 /* ViewControllers */,
 				58644B4B23A0D42000137378 /* Resources */,
