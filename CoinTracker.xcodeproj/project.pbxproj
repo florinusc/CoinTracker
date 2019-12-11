@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		582A7D7923A0D6B2002E2263 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */; };
 		582A7D8323A0DA26002E2263 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8223A0DA26002E2263 /* Storyboarded.swift */; };
+		582A7D8523A0DCF7002E2263 /* PriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8423A0DCF7002E2263 /* PriceListViewController.swift */; };
+		582A7D8723A0DD02002E2263 /* PriceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8623A0DD02002E2263 /* PriceListViewModel.swift */; };
+		582A7D8923A0DF1B002E2263 /* PriceListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8823A0DF1B002E2263 /* PriceListViewControllerTests.swift */; };
+		582A7D8B23A0DF29002E2263 /* PriceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8A23A0DF29002E2263 /* PriceListViewModelTests.swift */; };
 		58644B2923A0D21900137378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2823A0D21900137378 /* AppDelegate.swift */; };
 		58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2A23A0D21900137378 /* SceneDelegate.swift */; };
 		58644B3023A0D21900137378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B2E23A0D21900137378 /* Main.storyboard */; };
 		58644B3223A0D21D00137378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58644B3123A0D21D00137378 /* Assets.xcassets */; };
 		58644B3523A0D21D00137378 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B3323A0D21D00137378 /* LaunchScreen.storyboard */; };
-		58644B4023A0D21D00137378 /* CoinTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B3F23A0D21D00137378 /* CoinTrackerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,10 @@
 /* Begin PBXFileReference section */
 		582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
 		582A7D8223A0DA26002E2263 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		582A7D8423A0DCF7002E2263 /* PriceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewController.swift; sourceTree = "<group>"; };
+		582A7D8623A0DD02002E2263 /* PriceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModel.swift; sourceTree = "<group>"; };
+		582A7D8823A0DF1B002E2263 /* PriceListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewControllerTests.swift; sourceTree = "<group>"; };
+		582A7D8A23A0DF29002E2263 /* PriceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewModelTests.swift; sourceTree = "<group>"; };
 		58644B2523A0D21900137378 /* CoinTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58644B2823A0D21900137378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58644B2A23A0D21900137378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +45,6 @@
 		58644B3423A0D21D00137378 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58644B3623A0D21D00137378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58644B3B23A0D21D00137378 /* CoinTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58644B3F23A0D21D00137378 /* CoinTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTrackerTests.swift; sourceTree = "<group>"; };
 		58644B4123A0D21D00137378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		582A7D8C23A0DF66002E2263 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				582A7D8823A0DF1B002E2263 /* PriceListViewControllerTests.swift */,
+				582A7D8A23A0DF29002E2263 /* PriceListViewModelTests.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		58644B1C23A0D21900137378 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +124,7 @@
 		58644B3E23A0D21D00137378 /* CoinTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				58644B3F23A0D21D00137378 /* CoinTrackerTests.swift */,
+				582A7D8C23A0DF66002E2263 /* ViewControllers */,
 				58644B4123A0D21D00137378 /* Info.plist */,
 			);
 			path = CoinTrackerTests;
@@ -146,6 +161,8 @@
 		58644B4D23A0D43B00137378 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				582A7D8423A0DCF7002E2263 /* PriceListViewController.swift */,
+				582A7D8623A0DD02002E2263 /* PriceListViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -203,6 +220,7 @@
 					};
 					58644B3A23A0D21D00137378 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 						TestTargetID = 58644B2423A0D21900137378;
 					};
 				};
@@ -251,7 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582A7D8523A0DCF7002E2263 /* PriceListViewController.swift in Sources */,
 				58644B2923A0D21900137378 /* AppDelegate.swift in Sources */,
+				582A7D8723A0DD02002E2263 /* PriceListViewModel.swift in Sources */,
 				582A7D7923A0D6B2002E2263 /* ViewModelBased.swift in Sources */,
 				58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */,
 				582A7D8323A0DA26002E2263 /* Storyboarded.swift in Sources */,
@@ -262,7 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58644B4023A0D21D00137378 /* CoinTrackerTests.swift in Sources */,
+				582A7D8B23A0DF29002E2263 /* PriceListViewModelTests.swift in Sources */,
+				582A7D8923A0DF1B002E2263 /* PriceListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +472,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoinTrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -461,6 +483,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.CoinTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTracker.app/CoinTracker";
@@ -472,6 +495,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoinTrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
