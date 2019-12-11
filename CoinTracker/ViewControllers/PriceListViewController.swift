@@ -24,3 +24,7 @@ extension PriceListViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 }
+
+extension PriceListViewController: Storyboarded {
+    static var storyboardName: String { return "Main" }
+}
