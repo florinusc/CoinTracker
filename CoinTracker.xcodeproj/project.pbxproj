@@ -25,6 +25,8 @@
 		582A7DA423A10558002E2263 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA323A10558002E2263 /* UITableView+Extension.swift */; };
 		582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */; };
 		582A7DA823A1068B002E2263 /* PriceListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA723A1068B002E2263 /* PriceListCellViewModel.swift */; };
+		582A7DAA23A113F8002E2263 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA923A113F8002E2263 /* UIViewController+Extension.swift */; };
+		582A7DAC23A1167B002E2263 /* Decimal+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DAB23A1167B002E2263 /* Decimal+Extension.swift */; };
 		58644B2923A0D21900137378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2823A0D21900137378 /* AppDelegate.swift */; };
 		58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2A23A0D21900137378 /* SceneDelegate.swift */; };
 		58644B3023A0D21900137378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B2E23A0D21900137378 /* Main.storyboard */; };
@@ -61,6 +63,8 @@
 		582A7DA323A10558002E2263 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		582A7DA723A1068B002E2263 /* PriceListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListCellViewModel.swift; sourceTree = "<group>"; };
+		582A7DA923A113F8002E2263 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		582A7DAB23A1167B002E2263 /* Decimal+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extension.swift"; sourceTree = "<group>"; };
 		58644B2523A0D21900137378 /* CoinTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58644B2823A0D21900137378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58644B2A23A0D21900137378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 			children = (
 				582A7DA323A10558002E2263 /* UITableView+Extension.swift */,
 				582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */,
+				582A7DA923A113F8002E2263 /* UIViewController+Extension.swift */,
+				582A7DAB23A1167B002E2263 /* Decimal+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,10 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582A7DAA23A113F8002E2263 /* UIViewController+Extension.swift in Sources */,
 				582A7D8523A0DCF7002E2263 /* PriceListViewController.swift in Sources */,
 				58644B2923A0D21900137378 /* AppDelegate.swift in Sources */,
 				582A7DA423A10558002E2263 /* UITableView+Extension.swift in Sources */,
 				582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */,
+				582A7DAC23A1167B002E2263 /* Decimal+Extension.swift in Sources */,
 				582A7D9023A0E875002E2263 /* HistoricalPrice.swift in Sources */,
 				582A7D9323A0E8BB002E2263 /* Repository.swift in Sources */,
 				582A7D8723A0DD02002E2263 /* PriceListViewModel.swift in Sources */,

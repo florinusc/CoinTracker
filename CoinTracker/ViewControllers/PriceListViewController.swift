@@ -24,6 +24,13 @@ final class PriceListViewController: UIViewController, ViewModelBased {
     private func setup() {
         title = "Bitcoin price (EUR)"
         tableView.register(PriceListCell.self)
+        viewModel.getData { [weak self] (error) in
+            if let error = error {
+                self?.presentAlert(for: error)
+                return
+            }
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -34,6 +41,9 @@ extension PriceListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PriceListCell = tableView.dequeueReusableCell()
+        if let cellViewModel = viewModel.priceListCellViewModel(at: indexPath.row) {
+            cell.setup(with: cellViewModel)
+        }
         return cell
     }
 }

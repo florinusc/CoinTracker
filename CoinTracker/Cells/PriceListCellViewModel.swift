@@ -15,12 +15,12 @@ struct PriceListCellViewModel: ViewModel {
     
     // MARK: - Lifecycle
     init(_ currentPrice: CurrentPrice) {
-        priceString = "\(currentPrice.eur)"
+        priceString = "\(currentPrice.eur.roundedString) EUR"
         dateString = "Today"
     }
     
     init(_ historicalPrice: HistoricalPrice) {
-        priceString = "\(historicalPrice.price)"
+        priceString = "\(historicalPrice.price.roundedString) EUR"
         dateString = historicalPrice.date
     }
     
