@@ -12,7 +12,9 @@ final class PriceListViewController: UIViewController, ViewModelBased {
     @IBOutlet private(set) weak var tableView: UITableView!
     
     // MARK: - Public variables
-    var viewModel: PriceListViewModel!
+    var viewModel: PriceListViewModel! {
+        didSet { viewModel.updateCurrentPrice = updateCurrentPrice(error:) }
+    }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,6 +33,14 @@ final class PriceListViewController: UIViewController, ViewModelBased {
             }
             self?.tableView.reloadData()
         }
+    }
+    
+    private func updateCurrentPrice(error: Error?) {
+        if let error = error {
+            presentAlert(for: error)
+            return
+        }
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
 }
 

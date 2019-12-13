@@ -9,7 +9,8 @@ import Foundation
 final class PriceListViewModel: ViewModel {
     
     // MARK: - Private constants
-    let repository: Repository!
+    private let repository: Repository!
+    private let currentPriceRefreshInterval = 60.0
     
     // MARK: - Public variables
     var numberOfPrices: Int {
@@ -18,14 +19,20 @@ final class PriceListViewModel: ViewModel {
         }
         return (historicalPrices.count + 1)
     }
-    
+    var updateCurrentPrice: ((Error?) -> Void) = { _ in }
+     
     // MARK: - Private variables
     private var historicalPrices = [HistoricalPrice]()
     private var currentPrice: CurrentPrice?
+    private var currentPriceTimer: Timer?
     
     // MARK: - Lifecycle
     init(repository: Repository) {
         self.repository = repository
+    }
+    
+    deinit {
+        currentPriceTimer?.invalidate()
     }
     
     // MARK: - Public functions
@@ -35,8 +42,11 @@ final class PriceListViewModel: ViewModel {
         dispatchGroup.enter()
         repository.getCurrentPrice { [weak self] (result) in
             switch result {
-            case .failure(let error): dataError = error
-            case .success(let price): self?.currentPrice = price
+            case .failure(let error):
+                dataError = error
+            case .success(let price):
+                self?.currentPrice = price
+                self?.startCurrentPriceTimer()
             }
             dispatchGroup.leave()
         }
@@ -70,6 +80,17 @@ final class PriceListViewModel: ViewModel {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             guard let date0 = dateFormatter.date(from: price0.date), let date1 = dateFormatter.date(from: price1.date) else { return false }
             return date0.compare(date1) == .orderedDescending
+        }
+    }
+    
+    private func startCurrentPriceTimer() {
+        currentPriceTimer = Timer.scheduledTimer(withTimeInterval: currentPriceRefreshInterval, repeats: true) { [weak self] _ in
+            self?.repository.getCurrentPrice { (result) in
+                switch result {
+                case .failure(let error): self?.updateCurrentPrice(error)
+                case .success: self?.updateCurrentPrice(nil)
+                }
+            }
         }
     }
 }
