@@ -16,6 +16,9 @@ final class PriceListViewController: UIViewController, ViewModelBased {
         didSet { viewModel.updateCurrentPrice = updateCurrentPrice(error:) }
     }
     
+    // MARK: - Private variables
+    private var loadingView: LoadingView?
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +29,27 @@ final class PriceListViewController: UIViewController, ViewModelBased {
     private func setup() {
         title = "Bitcoin price (EUR)"
         tableView.register(PriceListCell.self)
+        setupLoadingView()
         viewModel.getData { [weak self] (error) in
             if let error = error {
                 self?.presentAlert(for: error)
                 return
             }
             self?.tableView.reloadData()
+            self?.hideLoadingView()
         }
+    }
+    
+    private func setupLoadingView() {
+        loadingView = .fromNib()
+        loadingView?.frame = UIScreen.main.bounds
+        guard let loadingView = loadingView else { return }
+        view.addSubview(loadingView)
+    }
+
+    private func hideLoadingView() {
+        guard let loadingView = loadingView else { return }
+        loadingView.isHidden = true
     }
     
     private func updateCurrentPrice(error: Error?) {

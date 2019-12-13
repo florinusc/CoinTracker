@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5823CAC223A3660B00A03754 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823CAC123A3660B00A03754 /* Date+Extension.swift */; };
+		5823CAC523A369BB00A03754 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823CAC423A369BB00A03754 /* LoadingView.swift */; };
+		5823CAC823A36EB500A03754 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5823CAC623A369C600A03754 /* LoadingView.xib */; };
 		582A7D7923A0D6B2002E2263 /* ViewModelBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */; };
 		582A7D8323A0DA26002E2263 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8223A0DA26002E2263 /* Storyboarded.swift */; };
 		582A7D8523A0DCF7002E2263 /* PriceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D8423A0DCF7002E2263 /* PriceListViewController.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		5823CAC123A3660B00A03754 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		5823CAC423A369BB00A03754 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5823CAC623A369C600A03754 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBased.swift; sourceTree = "<group>"; };
 		582A7D8223A0DA26002E2263 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		582A7D8423A0DCF7002E2263 /* PriceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceListViewController.swift; sourceTree = "<group>"; };
@@ -96,14 +100,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5823CAC323A369AC00A03754 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				5823CAC423A369BB00A03754 /* LoadingView.swift */,
+				5823CAC623A369C600A03754 /* LoadingView.xib */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		582A7D7623A0D69E002E2263 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				582A7DA223A10542002E2263 /* Extensions */,
 				582A7D7723A0D6A4002E2263 /* Protocols */,
 				582A7D9623A0E9BA002E2263 /* CustomError.swift */,
-				582A7D9E23A10501002E2263 /* NibLoadableView.swift */,
-				582A7DA023A10518002E2263 /* ReusableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -113,6 +124,8 @@
 			children = (
 				582A7D7823A0D6B2002E2263 /* ViewModelBased.swift */,
 				582A7D8223A0DA26002E2263 /* Storyboarded.swift */,
+				582A7D9E23A10501002E2263 /* NibLoadableView.swift */,
+				582A7DA023A10518002E2263 /* ReusableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 		58644B2723A0D21900137378 /* CoinTracker */ = {
 			isa = PBXGroup;
 			children = (
+				5823CAC323A369AC00A03754 /* Custom Views */,
 				582A7D9123A0E8B2002E2263 /* Data */,
 				582A7D8E23A0E852002E2263 /* Models */,
 				582A7D8D23A0E802002E2263 /* Cells */,
@@ -326,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5823CAC823A36EB500A03754 /* LoadingView.xib in Resources */,
 				58644B3523A0D21D00137378 /* LaunchScreen.storyboard in Resources */,
 				582A7D9D23A104A0002E2263 /* PriceListCell.xib in Resources */,
 				58644B3223A0D21D00137378 /* Assets.xcassets in Resources */,
@@ -352,6 +367,7 @@
 				58644B2923A0D21900137378 /* AppDelegate.swift in Sources */,
 				582A7DA423A10558002E2263 /* UITableView+Extension.swift in Sources */,
 				582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */,
+				5823CAC523A369BB00A03754 /* LoadingView.swift in Sources */,
 				5823CAC223A3660B00A03754 /* Date+Extension.swift in Sources */,
 				582A7DAC23A1167B002E2263 /* Decimal+Extension.swift in Sources */,
 				582A7D9023A0E875002E2263 /* HistoricalPrice.swift in Sources */,
