@@ -51,7 +51,7 @@ final class PriceListViewModel: ViewModel {
             dispatchGroup.leave()
         }
         dispatchGroup.enter()
-        repository.getHistoricalPrices { [weak self] (result) in
+        repository.getHistoricalPrices(from: Date().twoWeeksAgo, to: Date().yesterday) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .failure(let error): dataError = error

@@ -14,7 +14,7 @@ class MockRepository: Repository {
         self.shouldReturnError = shouldReturnError
     }
     
-    func getHistoricalPrices(_ block: @escaping ((Result<[HistoricalPrice], Error>) -> Void)) {
+    func getHistoricalPrices(from: Date, to: Date, _ block: @escaping (( Result<[HistoricalPrice], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return
