@@ -64,13 +64,13 @@ final class PriceListViewModel: ViewModel {
         }
     }
     
-    func priceListCellViewModel(at index: Int) -> PriceListCellViewModel? {
+    func priceListCellViewModel(at index: Int) -> ListCellViewModel? {
         guard index < numberOfPrices, index >= 0 else { return nil }
         if index == 0, let currentPrice = currentPrice {
-            return PriceListCellViewModel(currentPrice)
+            return ListCellViewModel(currentPrice)
         }
         let newIndex = currentPrice == nil ? index : index - 1
-        return PriceListCellViewModel(historicalPrices[newIndex])
+        return ListCellViewModel(historicalPrices[newIndex])
     }
     
     // MARK: - Private functions
