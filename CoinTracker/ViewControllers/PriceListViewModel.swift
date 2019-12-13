@@ -33,13 +33,20 @@ final class PriceListViewModel: ViewModel {
         var dataError: Error?
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        getCurrentPrice { (error) in
-            dataError = error
+        repository.getCurrentPrice { [weak self] (result) in
+            switch result {
+            case .failure(let error): dataError = error
+            case .success(let price): self?.currentPrice = price
+            }
             dispatchGroup.leave()
         }
         dispatchGroup.enter()
-        getHistoricalData { (error) in
-            dataError = error
+        repository.getHistoricalPrices { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error): dataError = error
+            case .success(let prices): self.historicalPrices = self.sortPrices(prices)
+            }
             dispatchGroup.leave()
         }
         dispatchGroup.notify(queue: .main) {
@@ -57,31 +64,6 @@ final class PriceListViewModel: ViewModel {
     }
     
     // MARK: - Private functions
-    private func getHistoricalData(_ block: @escaping (Error?) -> Void) {
-        repository.getHistoricalPrices { [weak self] (result) in
-            guard let self = self else { return }
-            switch result {
-            case .failure(let error):
-                block(error)
-            case .success(let prices):
-                self.historicalPrices = self.sortPrices(prices)
-                block(nil)
-            }
-        }
-    }
-    
-    private func getCurrentPrice(_ block: @escaping (Error?) -> Void) {
-        repository.getCurrentPrice { [weak self] (result) in
-            switch result {
-            case .failure(let error):
-                block(error)
-            case .success(let currentPrice):
-                self?.currentPrice = currentPrice
-                block(nil)
-            }
-        }
-    }
-    
     private func sortPrices(_ prices: [HistoricalPrice]) -> [HistoricalPrice] {
         return prices.sorted { (price0, price1) -> Bool in
             let dateFormatter = DateFormatter()
