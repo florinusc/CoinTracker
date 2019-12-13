@@ -7,6 +7,7 @@
 import Foundation
 
 protocol Repository {
-    func getHistoricalPrices(from: Date, to: Date, _ block: @escaping (( Result<[HistoricalPrice], Error>) -> Void))
-    func getCurrentPrice(_ block: @escaping ((Result<CurrentPrice, Error>) -> Void))
+    func getHistoricalPrices(from: Date, to: Date, for currency: String, _ block: @escaping (( Result<[Price], Error>) -> Void))
+    func getCurrentPrices(_ block: @escaping ((Result<[Price], Error>) -> Void))
+    func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void))
 }

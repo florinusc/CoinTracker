@@ -14,26 +14,41 @@ class MockRepository: Repository {
         self.shouldReturnError = shouldReturnError
     }
     
-    func getHistoricalPrices(from: Date, to: Date, _ block: @escaping (( Result<[HistoricalPrice], Error>) -> Void)) {
+    func getHistoricalPrices(from: Date, to: Date, for currency: String, _ block: @escaping (( Result<[Price], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return
         }
-        let prices = [HistoricalPrice(date: "2019-11-26", price: 6509.3508),
-                      HistoricalPrice(date: "2019-11-27", price: 6609.1561),
-                      HistoricalPrice(date: "2019-11-28", price: 6119.3808),
-                      HistoricalPrice(date: "2019-11-30", price: 6809.6846),
-                      HistoricalPrice(date: "2019-12-01", price: 6409.6848),
-                      HistoricalPrice(date: "2019-11-29", price: 7002.3651)]
+        
+        let prices = [Price(currency: "EUR", value: 6509.3508, date: "2019-11-26"),
+                      Price(currency: "EUR", value: 6609.1561, date: "2019-11-28"),
+                      Price(currency: "EUR", value: 6119.3808, date: "2019-11-27"),
+                      Price(currency: "EUR", value: 6509.3508, date: "2019-11-21"),
+                      Price(currency: "EUR", value: 6809.6846, date: "2019-11-23"),
+                      Price(currency: "EUR", value: 6409.6848, date: "2019-11-24"),
+                      Price(currency: "EUR", value: 7002.3651, date: "2019-11-30")]
         block(Result.success(prices))
     }
     
-    func getCurrentPrice(_ block: @escaping ((Result<CurrentPrice, Error>) -> Void)) {
+    func getCurrentPrices(_ block: @escaping ((Result<[Price], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return
         }
-        let currentPrice = CurrentPrice(usd: 7234.2432, eur: 6423.4233, gbp: 5234.1334)
-        block(Result.success(currentPrice))
+        let eurPrice = Price(currency: "EUR", value: 6549.3508, date: "2019-11-26")
+        let usdPrice = Price(currency: "USD", value: 8417.3508, date: "2019-11-26")
+        let gbpPrice = Price(currency: "GBP", value: 5344.3508, date: "2019-11-26")
+        block(Result.success([eurPrice, usdPrice, gbpPrice]))
+    }
+    
+    func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+        if shouldReturnError {
+            block(Result.failure(CustomError.networkError))
+            return
+        }
+        let eurPrice = Price(currency: "EUR", value: 6549.3508, date: "2019-11-26")
+        let usdPrice = Price(currency: "USD", value: 8417.3508, date: "2019-11-26")
+        let gbpPrice = Price(currency: "GBP", value: 5344.3508, date: "2019-11-26")
+        block(Result.success([eurPrice, usdPrice, gbpPrice]))
     }
 }

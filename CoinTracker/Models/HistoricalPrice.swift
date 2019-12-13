@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct HistoricalPrice {
-    let date: String
-    let price: Decimal
-}
+//struct HistoricalPrice {
+//    let date: String
+//    let price: Decimal
+//}

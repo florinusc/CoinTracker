@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="-495.6521739130435" y="154.6875"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="VY1-m2-seH">
             <objects>
-                <viewController id="rIQ-Ch-U8p" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="rIQ-Ch-U8p" customClass="DetailViewController" customModule="CoinTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RVz-y2-Gf5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

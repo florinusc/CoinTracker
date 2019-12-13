@@ -14,7 +14,7 @@ final class PriceListViewModel: ViewModel {
     
     // MARK: - Public variables
     var numberOfPrices: Int {
-        if currentPrice == nil {
+        if currentPrices == nil {
             return historicalPrices.count
         }
         return (historicalPrices.count + 1)
@@ -22,8 +22,11 @@ final class PriceListViewModel: ViewModel {
     var updateCurrentPrice: ((Error?) -> Void) = { _ in }
      
     // MARK: - Private variables
-    private var historicalPrices = [HistoricalPrice]()
-    private var currentPrice: CurrentPrice?
+    private var historicalPrices = [Price]()
+    private var currentPrices: [Price]?
+    private var currentPrice: Price? {
+        return currentPrices?.first(where: { $0.currency == "EUR" })
+    }
     private var currentPriceTimer: Timer?
     
     // MARK: - Lifecycle
@@ -40,18 +43,18 @@ final class PriceListViewModel: ViewModel {
         var dataError: Error?
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        repository.getCurrentPrice { [weak self] (result) in
+        repository.getCurrentPrices { [weak self] (result) in
             switch result {
             case .failure(let error):
                 dataError = error
-            case .success(let price):
-                self?.currentPrice = price
+            case .success(let prices):
+                self?.currentPrices = prices
                 self?.startCurrentPriceTimer()
             }
             dispatchGroup.leave()
         }
         dispatchGroup.enter()
-        repository.getHistoricalPrices(from: Date().twoWeeksAgo, to: Date().yesterday) { [weak self] (result) in
+        repository.getHistoricalPrices(from: Date().twoWeeksAgo, to: Date().yesterday, for: "eur") { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .failure(let error): dataError = error
@@ -67,14 +70,23 @@ final class PriceListViewModel: ViewModel {
     func priceListCellViewModel(at index: Int) -> ListCellViewModel? {
         guard index < numberOfPrices, index >= 0 else { return nil }
         if index == 0, let currentPrice = currentPrice {
-            return ListCellViewModel(currentPrice)
+            return ListCellViewModel(currentPrice, isToday: true)
         }
         let newIndex = currentPrice == nil ? index : index - 1
         return ListCellViewModel(historicalPrices[newIndex])
     }
     
+    func detailViewModel(at index: Int) -> DetailViewModel? {
+        guard index < numberOfPrices, index >= 0 else { return nil }
+        if index == 0, let currentPrices = currentPrices {
+            return DetailViewModel(currentPrices: currentPrices)
+        }
+        let newIndex = currentPrice == nil ? index : index - 1
+        return DetailViewModel(date: historicalPrices[newIndex].date)
+    }
+    
     // MARK: - Private functions
-    private func sortPrices(_ prices: [HistoricalPrice]) -> [HistoricalPrice] {
+    private func sortPrices(_ prices: [Price]) -> [Price] {
         return prices.sorted { (price0, price1) -> Bool in
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -85,7 +97,7 @@ final class PriceListViewModel: ViewModel {
     
     private func startCurrentPriceTimer() {
         currentPriceTimer = Timer.scheduledTimer(withTimeInterval: currentPriceRefreshInterval, repeats: true) { [weak self] _ in
-            self?.repository.getCurrentPrice { (result) in
+            self?.repository.getCurrentPrices { (result) in
                 switch result {
                 case .failure(let error): self?.updateCurrentPrice(error)
                 case .success: self?.updateCurrentPrice(nil)

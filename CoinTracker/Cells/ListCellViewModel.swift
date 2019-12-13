@@ -14,14 +14,8 @@ struct ListCellViewModel: ViewModel {
     let secondaryString: String
     
     // MARK: - Lifecycle
-    init(_ currentPrice: CurrentPrice) {
-        mainString = "\(currentPrice.eur.roundedString) EUR"
-        secondaryString = "Today"
+    init(_ price: Price, isToday: Bool = false) {
+        mainString = "\(price.value.roundedString) \(price.currency)"
+        secondaryString = isToday ? "Today" : price.date
     }
-    
-    init(_ historicalPrice: HistoricalPrice) {
-        mainString = "\(historicalPrice.price.roundedString) EUR"
-        secondaryString = historicalPrice.date
-    }
-    
 }

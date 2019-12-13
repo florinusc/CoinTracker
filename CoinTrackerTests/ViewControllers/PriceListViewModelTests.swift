@@ -34,7 +34,7 @@ class PriceListViewModelTests: XCTestCase {
     func test_numberOfPrices_afterGettingData_isCorrect() {
         let viewModel = makeSUT()
         viewModel.getData { _ in }
-        XCTAssertEqual(viewModel.numberOfPrices, 7)
+        XCTAssertEqual(viewModel.numberOfPrices, 8)
     }
     
     func test_priceListCellViewModel_atInvalidIndex_isNil() {

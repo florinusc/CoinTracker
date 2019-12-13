@@ -82,6 +82,13 @@ extension PriceListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let detailViewModel = viewModel.detailViewModel(at: indexPath.row) else { return }
+        let detailViewController = DetailViewController.getInstance(with: detailViewModel)
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
 
 extension PriceListViewController: Storyboarded {
