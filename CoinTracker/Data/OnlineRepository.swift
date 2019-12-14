@@ -27,8 +27,17 @@ class OnlineRepository: Repository {
         }
     }
     
-    func getCurrentPrices(_ block: @escaping ((Result<[Price], Error>) -> Void)) {
-        
+    func getCurrentPrices(date: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+        SessionManager.shared.request(requestType: .currentPrice) { (result) in
+            switch result {
+            case .failure(let error):
+                block(Result.failure(error))
+            case .success(let json):
+                let resource = CurrentPriceResource(json: json)
+                let prices = resource.pairs.map { Price(currency: $0.currency, value: $0.value, date: date) }
+                block(Result.success(prices))
+            }
+        }
     }
     
     func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {

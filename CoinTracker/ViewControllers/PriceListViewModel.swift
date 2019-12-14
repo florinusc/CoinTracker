@@ -11,6 +11,7 @@ final class PriceListViewModel: ViewModel {
     // MARK: - Private constants
     private let repository: Repository!
     private let currentPriceRefreshInterval = 60.0
+    private let currentCurrency = "EUR"
     
     // MARK: - Public variables
     var numberOfPrices: Int {
@@ -25,7 +26,7 @@ final class PriceListViewModel: ViewModel {
     private var historicalPrices = [Price]()
     private var currentPrices: [Price]?
     private var currentPrice: Price? {
-        return currentPrices?.first(where: { $0.currency == "EUR" })
+        return currentPrices?.first(where: { $0.currency == currentCurrency })
     }
     private var currentPriceTimer: Timer?
     
@@ -43,7 +44,7 @@ final class PriceListViewModel: ViewModel {
         var dataError: Error?
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        repository.getCurrentPrices { [weak self] (result) in
+        repository.getCurrentPrices(date: DateHelper.shared.dateString(from: Date())) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 dataError = error
@@ -54,7 +55,7 @@ final class PriceListViewModel: ViewModel {
             dispatchGroup.leave()
         }
         dispatchGroup.enter()
-        repository.getHistoricalPrices(from: Date().twoWeeksAgo, to: Date().yesterday, for: "eur") { [weak self] (result) in
+        repository.getHistoricalPrices(from: Date().twoWeeksAgo, to: Date().yesterday, for: currentCurrency) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .failure(let error): dataError = error
@@ -95,7 +96,7 @@ final class PriceListViewModel: ViewModel {
     
     private func startCurrentPriceTimer() {
         currentPriceTimer = Timer.scheduledTimer(withTimeInterval: currentPriceRefreshInterval, repeats: true) { [weak self] _ in
-            self?.repository.getCurrentPrices { (result) in
+            self?.repository.getCurrentPrices(date: DateHelper.shared.dateString(from: Date())) { (result) in
                 switch result {
                 case .failure(let error): self?.updateCurrentPrice(error)
                 case .success: self?.updateCurrentPrice(nil)

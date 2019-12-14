@@ -30,14 +30,14 @@ class MockRepository: Repository {
         block(Result.success(prices))
     }
     
-    func getCurrentPrices(_ block: @escaping ((Result<[Price], Error>) -> Void)) {
+    func getCurrentPrices(date: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return
         }
-        let eurPrice = Price(currency: "EUR", value: 6549.3508, date: "2019-11-26")
-        let usdPrice = Price(currency: "USD", value: 8417.3508, date: "2019-11-26")
-        let gbpPrice = Price(currency: "GBP", value: 5344.3508, date: "2019-11-26")
+        let eurPrice = Price(currency: "EUR", value: 6549.3508, date: date)
+        let usdPrice = Price(currency: "USD", value: 8417.3508, date: date)
+        let gbpPrice = Price(currency: "GBP", value: 5344.3508, date: date)
         block(Result.success([eurPrice, usdPrice, gbpPrice]))
     }
     

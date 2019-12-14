@@ -8,13 +8,18 @@ import Foundation
 import SwiftyJSON
 
 public struct CurrentPriceResource {
-    let eurPrice: Float
-    let usdPrice: Float
-    let gbpPrice: Float
+    public let pairs: [Pair]
     
     public init(json: JSON) {
-        eurPrice = json["bpi"]["EUR"]["rate_float"].floatValue
-        usdPrice = json["bpi"]["USD"]["rate_float"].floatValue
-        gbpPrice = json["bpi"]["GBP"]["rate_float"].floatValue
+        var pairs = [Pair]()
+        for (key, value) in json["bpi"].dictionaryValue {
+            pairs.append(Pair(currency: key, value: value["rate_float"].doubleValue))
+        }
+        self.pairs = pairs
+    }
+    
+    public struct Pair {
+        public let currency: String
+        public let value: Double
     }
 }

@@ -14,7 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: MockRepository()))
+        let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: OnlineRepository()))
         let navigationController = UINavigationController(rootViewController: priceListViewController)
         navigationController.navigationBar.tintColor = .label
         window.rootViewController = navigationController
