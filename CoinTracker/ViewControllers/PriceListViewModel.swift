@@ -88,9 +88,7 @@ final class PriceListViewModel: ViewModel {
     // MARK: - Private functions
     private func sortPrices(_ prices: [Price]) -> [Price] {
         return prices.sorted { (price0, price1) -> Bool in
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            guard let date0 = dateFormatter.date(from: price0.date), let date1 = dateFormatter.date(from: price1.date) else { return false }
+            guard let date0 = DateHelper.shared.date(from: price0.date), let date1 = DateHelper.shared.date(from: price1.date) else { return false }
             return date0.compare(date1) == .orderedDescending
         }
     }

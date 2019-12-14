@@ -21,6 +21,7 @@ target 'NetworkLayer' do
   # Pods for Network
 
   pod 'Moya', '~> 13.0'
+  pod 'SwiftyJSON', '~> 4.0'
 
   target 'NetworkLayerTests' do
     # Pods for testing

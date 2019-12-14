@@ -6,7 +6,7 @@
 
 import Foundation
 
-extension Decimal {
+extension Double {
     var roundedString: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
@@ -14,6 +14,6 @@ extension Decimal {
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         formatter.roundingMode = .halfEven
-        return formatter.string(from: NSDecimalNumber(decimal: self)) ?? "PRICE ERROR"
+        return formatter.string(from: NSNumber(value: self)) ?? "Rounding Error"
     }
 }

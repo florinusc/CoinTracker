@@ -33,7 +33,7 @@
 		582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */; };
 		582A7DA823A1068B002E2263 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA723A1068B002E2263 /* ListCellViewModel.swift */; };
 		582A7DAA23A113F8002E2263 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DA923A113F8002E2263 /* UIViewController+Extension.swift */; };
-		582A7DAC23A1167B002E2263 /* Decimal+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DAB23A1167B002E2263 /* Decimal+Extension.swift */; };
+		582A7DAC23A1167B002E2263 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7DAB23A1167B002E2263 /* Double+Extension.swift */; };
 		58644B2923A0D21900137378 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2823A0D21900137378 /* AppDelegate.swift */; };
 		58644B2B23A0D21900137378 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58644B2A23A0D21900137378 /* SceneDelegate.swift */; };
 		58644B3023A0D21900137378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58644B2E23A0D21900137378 /* Main.storyboard */; };
@@ -47,6 +47,10 @@
 		58DDB8D223A50ACC0094B3E9 /* NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */; };
 		58DDB8D323A50ACC0094B3E9 /* NetworkLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		58DDB8DB23A50AF00094B3E9 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8DA23A50AF00094B3E9 /* SessionManager.swift */; };
+		58DDB8DD23A50DEB0094B3E9 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8DC23A50DEB0094B3E9 /* RequestType.swift */; };
+		58DDB8E123A5114C0094B3E9 /* CurrentPriceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8E023A5114C0094B3E9 /* CurrentPriceResource.swift */; };
+		58DDB8E323A514B90094B3E9 /* HistoricalPriceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8E223A514B90094B3E9 /* HistoricalPriceResource.swift */; };
+		58DDB8E523A522DD0094B3E9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8E423A522DD0094B3E9 /* DateHelper.swift */; };
 		84A56D0CC9C2625BE61E2C09 /* Pods_NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E7C629F663A55CE85230A4 /* Pods_NetworkLayer.framework */; };
 		C2463333C09E053AA7B505AA /* Pods_CoinTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664677D3F0AB904C79FFB93F /* Pods_CoinTrackerTests.framework */; };
 		EB13DE2D0C3E488E1064720A /* Pods_NetworkLayer_NetworkLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629405EB5DDB25B9FA68F77C /* Pods_NetworkLayer_NetworkLayerTests.framework */; };
@@ -130,7 +134,7 @@
 		582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		582A7DA723A1068B002E2263 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		582A7DA923A113F8002E2263 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		582A7DAB23A1167B002E2263 /* Decimal+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+Extension.swift"; sourceTree = "<group>"; };
+		582A7DAB23A1167B002E2263 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		58644B2523A0D21900137378 /* CoinTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58644B2823A0D21900137378 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58644B2A23A0D21900137378 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +155,10 @@
 		58DDB8CC23A50ACC0094B3E9 /* NetworkLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerTests.swift; sourceTree = "<group>"; };
 		58DDB8CE23A50ACC0094B3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58DDB8DA23A50AF00094B3E9 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		58DDB8DC23A50DEB0094B3E9 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		58DDB8E023A5114C0094B3E9 /* CurrentPriceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceResource.swift; sourceTree = "<group>"; };
+		58DDB8E223A514B90094B3E9 /* HistoricalPriceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPriceResource.swift; sourceTree = "<group>"; };
+		58DDB8E423A522DD0094B3E9 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		629405EB5DDB25B9FA68F77C /* Pods_NetworkLayer_NetworkLayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetworkLayer_NetworkLayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664677D3F0AB904C79FFB93F /* Pods_CoinTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F669FA009DDCF7C02FF6C2 /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +225,7 @@
 				582A7DA223A10542002E2263 /* Extensions */,
 				582A7D7723A0D6A4002E2263 /* Protocols */,
 				582A7D9623A0E9BA002E2263 /* CustomError.swift */,
+				58DDB8E423A522DD0094B3E9 /* DateHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,7 +286,7 @@
 				582A7DA323A10558002E2263 /* UITableView+Extension.swift */,
 				582A7DA523A10592002E2263 /* UITableViewCell+Extension.swift */,
 				582A7DA923A113F8002E2263 /* UIViewController+Extension.swift */,
-				582A7DAB23A1167B002E2263 /* Decimal+Extension.swift */,
+				582A7DAB23A1167B002E2263 /* Double+Extension.swift */,
 				5823CAC123A3660B00A03754 /* Date+Extension.swift */,
 			);
 			path = Extensions;
@@ -374,9 +383,10 @@
 		58DDB8BE23A50ACC0094B3E9 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				58DDB8BF23A50ACC0094B3E9 /* NetworkLayer.h */,
-				58DDB8C023A50ACC0094B3E9 /* Info.plist */,
+				58DDB8DF23A510B80094B3E9 /* Framework files */,
+				58DDB8DE23A510AB0094B3E9 /* Resources */,
 				58DDB8DA23A50AF00094B3E9 /* SessionManager.swift */,
+				58DDB8DC23A50DEB0094B3E9 /* RequestType.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -388,6 +398,24 @@
 				58DDB8CE23A50ACC0094B3E9 /* Info.plist */,
 			);
 			path = NetworkLayerTests;
+			sourceTree = "<group>";
+		};
+		58DDB8DE23A510AB0094B3E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58DDB8E023A5114C0094B3E9 /* CurrentPriceResource.swift */,
+				58DDB8E223A514B90094B3E9 /* HistoricalPriceResource.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		58DDB8DF23A510B80094B3E9 /* Framework files */ = {
+			isa = PBXGroup;
+			children = (
+				58DDB8BF23A50ACC0094B3E9 /* NetworkLayer.h */,
+				58DDB8C023A50ACC0094B3E9 /* Info.plist */,
+			);
+			path = "Framework files";
 			sourceTree = "<group>";
 		};
 		70C5AC3C09DD2B270CCB9286 /* Pods */ = {
@@ -741,7 +769,8 @@
 				582A7DA623A10592002E2263 /* UITableViewCell+Extension.swift in Sources */,
 				5823CAC523A369BB00A03754 /* LoadingView.swift in Sources */,
 				5823CAC223A3660B00A03754 /* Date+Extension.swift in Sources */,
-				582A7DAC23A1167B002E2263 /* Decimal+Extension.swift in Sources */,
+				582A7DAC23A1167B002E2263 /* Double+Extension.swift in Sources */,
+				58DDB8E523A522DD0094B3E9 /* DateHelper.swift in Sources */,
 				582A7D9323A0E8BB002E2263 /* Repository.swift in Sources */,
 				582A7D8723A0DD02002E2263 /* PriceListViewModel.swift in Sources */,
 				580B4C5B23A3F1CF0060E3E2 /* DetailViewModel.swift in Sources */,
@@ -775,7 +804,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58DDB8E123A5114C0094B3E9 /* CurrentPriceResource.swift in Sources */,
+				58DDB8E323A514B90094B3E9 /* HistoricalPriceResource.swift in Sources */,
 				58DDB8DB23A50AF00094B3E9 /* SessionManager.swift in Sources */,
+				58DDB8DD23A50DEB0094B3E9 /* RequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1040,7 +1072,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetworkLayer/Info.plist;
+				INFOPLIST_FILE = "NetworkLayer/Framework files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1070,7 +1102,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NetworkLayer/Info.plist;
+				INFOPLIST_FILE = "NetworkLayer/Framework files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
