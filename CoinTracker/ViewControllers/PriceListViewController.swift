@@ -27,10 +27,15 @@ final class PriceListViewController: UIViewController, ViewModelBased {
     
     // MARK: - Private functions
     private func setup() {
-        title = "Bitcoin price (EUR)"
+        setupNavBar()
         setupTableView()
         setupLoadingView()
         getData()
+    }
+    
+    private func setupNavBar() {
+        title = "Bitcoin price (EUR)"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     private func setupTableView() {

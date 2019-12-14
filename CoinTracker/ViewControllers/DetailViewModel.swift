@@ -16,6 +16,10 @@ class DetailViewModel: ViewModel {
         return currentPrices.count
     }
     
+    var title: String {
+        return date
+    }
+    
     // MARK: - Private variables
     private var currentPrices = [Price]()
     
@@ -33,7 +37,7 @@ class DetailViewModel: ViewModel {
     // MARK: - Public functions
     func listCellViewModel(at index: Int) -> ListCellViewModel? {
         guard index < numberOfCurrencies, index >= 0 else { return nil }
-        return ListCellViewModel(currentPrices[index])
+        return ListCellViewModel(currentPrices[index], withDate: false)
     }
     
 }

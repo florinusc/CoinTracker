@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let window = UIWindow(frame: UIScreen.main.bounds)
             let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: MockRepository()))
             let navigationController = UINavigationController(rootViewController: priceListViewController)
+            navigationController.navigationBar.tintColor = .black
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
             return true

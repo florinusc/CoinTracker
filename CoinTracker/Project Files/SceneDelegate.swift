@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         let priceListViewController = PriceListViewController.getInstance(with: PriceListViewModel(repository: MockRepository()))
         let navigationController = UINavigationController(rootViewController: priceListViewController)
+        navigationController.navigationBar.tintColor = .label
         window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
