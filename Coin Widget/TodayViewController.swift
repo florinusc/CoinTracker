@@ -14,7 +14,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet private(set) weak var mainLabel: UILabel!
         
     // MARK: - Private constants
-    let repository = OnlineRepository()
+    private let repository = OnlineRepository()
+    private let currentPriceRefreshInterval = 10.0
+    
+    // MARK: - Private constants
+    private var currentPriceTimer: Timer?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -26,10 +30,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+    deinit {
+        currentPriceTimer?.invalidate()
+    }
+    
     // MARK: - Private functions
     private func setup() {
         mainLabel.text = "Loading price..."
         getData()
+        startCurrentPriceTimer()
     }
     
     private func getData() {
@@ -45,6 +54,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     private func updateMainLabel(prices: [Price]) {
         guard let price = prices.first(where: { $0.currency == "EUR" }) else { return }
         mainLabel.text = "BTC: \(price.value.roundedString) EUR"
+    }
+    
+    private func startCurrentPriceTimer() {
+        currentPriceTimer = Timer.scheduledTimer(withTimeInterval: currentPriceRefreshInterval, repeats: true) { [weak self] _ in
+            self?.getData()
+        }
     }
     
 }
