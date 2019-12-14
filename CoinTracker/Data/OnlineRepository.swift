@@ -41,6 +41,30 @@ class OnlineRepository: Repository {
     }
     
     func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+        let dispatchGroup = DispatchGroup()
+        var prices = [Price]()
+        for currency in currencies {
+            dispatchGroup.enter()
+            SessionManager.shared.request(requestType: .historicalPrice(currency: currency, startDate: date, endDate: date)) { (result) in
+                switch result {
+                case .failure(let error):
+                    block(Result.failure(error))
+                    break
+                case .success(let json):
+                    let resource = HistoricalPriceResource(json: json)
+                    guard let priceResource = resource.prices.first else {
+                        block(Result.failure(CustomError.generalError))
+                        break
+                    }
+                    let price = Price(currency: currency, value: priceResource.value, date: priceResource.key)
+                    prices.append(price)
+                }
+                dispatchGroup.leave()
+            }
+        }
         
+        dispatchGroup.notify(queue: .main) {
+            block(Result.success(prices))
+        }
     }
 }

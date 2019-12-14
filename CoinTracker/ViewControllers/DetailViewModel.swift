@@ -25,9 +25,9 @@ class DetailViewModel: ViewModel {
     // MARK: - Lifecycle
     init?(currentPrices: [Price]) {
         guard let date = currentPrices.first?.date else { return nil }
-        self.currentPrices = currentPrices
         self.date = date
         self.repository = nil
+        self.currentPrices = sort(prices: currentPrices)
     }
     
     init(date: String, repository: Repository) {
@@ -50,9 +50,13 @@ class DetailViewModel: ViewModel {
             case .failure(let error):
                 self.updateData(error)
             case .success(let prices):
-                self.currentPrices = prices
+                self.currentPrices = self.sort(prices: prices)
                 self.updateData(nil)
             }
         })
+    }
+    
+    private func sort(prices: [Price]) -> [Price] {
+        return prices.sorted(by: { $0.currency < $1.currency })
     }
 }
