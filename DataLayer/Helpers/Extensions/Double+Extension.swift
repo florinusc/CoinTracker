@@ -6,7 +6,7 @@
 
 import Foundation
 
-extension Double {
+public extension Double {
     var roundedString: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
