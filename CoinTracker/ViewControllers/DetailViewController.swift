@@ -12,7 +12,12 @@ class DetailViewController: UIViewController, ViewModelBased {
     @IBOutlet private(set) weak var tableView: UITableView!
     
     // MARK: - Public variables
-    var viewModel: DetailViewModel!
+    var viewModel: DetailViewModel! {
+        didSet { viewModel.updateData = reload(error:) }
+    }
+    
+    // MARK: - Private variables
+    private var loadingView: LoadingView?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -25,6 +30,36 @@ class DetailViewController: UIViewController, ViewModelBased {
         title = viewModel.title
         tableView.register(ListCell.self)
         tableView.tableFooterView = UIView()
+        setupLoadingView()
+        guard viewModel.isDataReady else {
+            startLoader()
+            return
+        }
+    }
+    
+    private func setupLoadingView() {
+        loadingView = .fromNib()
+        loadingView?.frame = UIScreen.main.bounds
+        guard let loadingView = loadingView else { return }
+        view.addSubview(loadingView)
+        loadingView.isHidden = true
+    }
+
+    private func hideLoadingView() {
+        loadingView?.isHidden = true
+    }
+    
+    private func reload(error: Error?) {
+        hideLoadingView()
+        if let error = error {
+            presentAlert(for: error)
+            return
+        }
+        tableView.reloadData()
+    }
+    
+    private func startLoader() {
+        loadingView?.isHidden = false
     }
 }
 

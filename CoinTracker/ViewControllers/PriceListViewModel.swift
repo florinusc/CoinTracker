@@ -82,7 +82,7 @@ final class PriceListViewModel: ViewModel {
             return DetailViewModel(currentPrices: currentPrices)
         }
         let newIndex = currentPrice == nil ? index : index - 1
-        return DetailViewModel(date: historicalPrices[newIndex].date)
+        return DetailViewModel(date: historicalPrices[newIndex].date, repository: repository)
     }
     
     // MARK: - Private functions

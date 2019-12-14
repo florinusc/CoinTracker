@@ -10,15 +10,14 @@ class DetailViewModel: ViewModel {
     
     // MARK: - Private constants
     private let date: String
+    private let repository: Repository?
+    private let supportedCurrencies = ["EUR", "USD", "GBP"]
     
     // MARK: - Public variables
-    var numberOfCurrencies: Int {
-        return currentPrices.count
-    }
-    
-    var title: String {
-        return date
-    }
+    var numberOfCurrencies: Int { return currentPrices.count }
+    var title: String { return date }
+    var updateData: (Error?) -> Void = { _ in }
+    var isDataReady: Bool { return currentPrices.count > 0 }
     
     // MARK: - Private variables
     private var currentPrices = [Price]()
@@ -28,10 +27,13 @@ class DetailViewModel: ViewModel {
         guard let date = currentPrices.first?.date else { return nil }
         self.currentPrices = currentPrices
         self.date = date
+        self.repository = nil
     }
     
-    init(date: String) {
+    init(date: String, repository: Repository) {
         self.date = date
+        self.repository = repository
+        getData()
     }
     
     // MARK: - Public functions
@@ -40,4 +42,17 @@ class DetailViewModel: ViewModel {
         return ListCellViewModel(currentPrices[index], withDate: false)
     }
     
+    // MARK: - Private functions
+    private func getData() {
+        repository?.getPrice(on: date, for: supportedCurrencies, { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                self.updateData(error)
+            case .success(let prices):
+                self.currentPrices = prices
+                self.updateData(nil)
+            }
+        })
+    }
 }
