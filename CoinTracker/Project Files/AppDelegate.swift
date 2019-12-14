@@ -5,6 +5,7 @@
 
 
 import UIKit
+import DataLayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

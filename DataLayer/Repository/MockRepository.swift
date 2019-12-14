@@ -6,15 +6,15 @@
 
 import Foundation
 
-class MockRepository: Repository {
+public class MockRepository: Repository {
     
     let shouldReturnError: Bool
     
-    init(_ shouldReturnError: Bool = false) {
+    public init(_ shouldReturnError: Bool = false) {
         self.shouldReturnError = shouldReturnError
     }
     
-    func getHistoricalPrices(from: Date, to: Date, for currency: String, _ block: @escaping (( Result<[Price], Error>) -> Void)) {
+    public func getHistoricalPrices(from: Date, to: Date, for currency: String, _ block: @escaping (( Result<[Price], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return
@@ -30,7 +30,7 @@ class MockRepository: Repository {
         block(Result.success(prices))
     }
     
-    func getCurrentPrices(date: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+    public func getCurrentPrices(date: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return
@@ -41,7 +41,7 @@ class MockRepository: Repository {
         block(Result.success([eurPrice, usdPrice, gbpPrice]))
     }
     
-    func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+    public func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {
         if shouldReturnError {
             block(Result.failure(CustomError.networkError))
             return

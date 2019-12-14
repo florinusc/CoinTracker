@@ -8,8 +8,11 @@ import Foundation
 import NetworkLayer
 import SwiftyJSON
 
-class OnlineRepository: Repository {
-    func getHistoricalPrices(from: Date, to: Date, for currency: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+public class OnlineRepository: Repository {
+    
+    public init() {}
+    
+    public func getHistoricalPrices(from: Date, to: Date, for currency: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
         let startDate = DateHelper.shared.dateString(from: from)
         let endDate = DateHelper.shared.dateString(from: to)
         SessionManager.shared.request(requestType: .historicalPrice(currency: currency, startDate: startDate, endDate: endDate)) { (result) in
@@ -27,7 +30,7 @@ class OnlineRepository: Repository {
         }
     }
     
-    func getCurrentPrices(date: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+    public func getCurrentPrices(date: String, _ block: @escaping ((Result<[Price], Error>) -> Void)) {
         SessionManager.shared.request(requestType: .currentPrice) { (result) in
             switch result {
             case .failure(let error):
@@ -40,7 +43,7 @@ class OnlineRepository: Repository {
         }
     }
     
-    func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {
+    public func getPrice(on date: String, for currencies: [String], _ block: @escaping ((Result<[Price], Error>) -> Void)) {
         let dispatchGroup = DispatchGroup()
         var prices = [Price]()
         for currency in currencies {

@@ -5,6 +5,7 @@
     
 
 import Foundation
+import DataLayer
 
 class DetailViewModel: ViewModel {
     

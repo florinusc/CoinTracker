@@ -5,7 +5,7 @@
     
 
 import Foundation
-
+import DataLayer
 
 struct ListCellViewModel: ViewModel {
     

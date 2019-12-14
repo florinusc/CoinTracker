@@ -5,6 +5,7 @@
     
 
 import Foundation
+import DataLayer
 
 final class PriceListViewModel: ViewModel {
     
