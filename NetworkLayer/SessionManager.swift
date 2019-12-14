@@ -10,7 +10,6 @@ public class SessionManager {
     
     public static let shared = SessionManager()
     
-    private init () {}
+    private init() {}
     
-    func request() {}
 }

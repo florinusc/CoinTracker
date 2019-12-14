@@ -5,6 +5,6 @@
     
 
 import Foundation
-import Network
+import NetworkLayer
 
 class OnlineRepository {}

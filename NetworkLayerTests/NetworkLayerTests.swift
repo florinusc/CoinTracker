@@ -1,13 +1,13 @@
 //
-//  NetworkTests.swift, 
+//  NetworkLayerTests.swift, 
 //  CoinTracker
 //
     
 
 import XCTest
-@testable import Network
+@testable import NetworkLayer
 
-class NetworkTests: XCTestCase {
+class NetworkLayerTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
