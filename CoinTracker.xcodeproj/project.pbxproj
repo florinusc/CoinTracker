@@ -1414,6 +1414,7 @@
 		58ACD2F323A535F900CF7ACE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Coin Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1433,6 +1434,7 @@
 		58ACD2F423A535F900CF7ACE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Coin Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

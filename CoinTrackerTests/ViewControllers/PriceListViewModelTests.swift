@@ -5,6 +5,7 @@
     
 
 import XCTest
+import DataLayer
 @testable import CoinTracker
 
 class PriceListViewModelTests: XCTestCase {

@@ -5,7 +5,7 @@
     
 
 import Foundation
-@testable import CoinTracker
+@testable import DataLayer
 
 extension Price {
     static func makeEurMock() -> Price {
