@@ -43,8 +43,6 @@
 		58ACD2EA23A535F900CF7ACE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACD2E923A535F900CF7ACE /* TodayViewController.swift */; };
 		58ACD2ED23A535F900CF7ACE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ACD2EB23A535F900CF7ACE /* MainInterface.storyboard */; };
 		58ACD2F123A535F900CF7ACE /* Coin Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 58ACD2E523A535F900CF7ACE /* Coin Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		58ACD30423A5362300CF7ACE /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACD2FB23A5362200CF7ACE /* DataLayer.framework */; };
-		58ACD30B23A5362300CF7ACE /* DataLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACD30A23A5362300CF7ACE /* DataLayerTests.swift */; };
 		58ACD30D23A5362300CF7ACE /* DataLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 58ACD2FD23A5362200CF7ACE /* DataLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		58ACD31023A5362300CF7ACE /* DataLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACD2FB23A5362200CF7ACE /* DataLayer.framework */; };
 		58ACD31123A5362300CF7ACE /* DataLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58ACD2FB23A5362200CF7ACE /* DataLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,8 +53,6 @@
 		58ACD31C23A536D800CF7ACE /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9823A0F3DA002E2263 /* Price.swift */; };
 		58ACD31D23A536F100CF7ACE /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A7D9623A0E9BA002E2263 /* CustomError.swift */; };
 		58DDB88C23A4FCF70094B3E9 /* Price+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB88B23A4FCF70094B3E9 /* Price+Extensions.swift */; };
-		58DDB8C623A50ACC0094B3E9 /* NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */; };
-		58DDB8CD23A50ACC0094B3E9 /* NetworkLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8CC23A50ACC0094B3E9 /* NetworkLayerTests.swift */; };
 		58DDB8CF23A50ACC0094B3E9 /* NetworkLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 58DDB8BF23A50ACC0094B3E9 /* NetworkLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		58DDB8D223A50ACC0094B3E9 /* NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */; };
 		58DDB8D323A50ACC0094B3E9 /* NetworkLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,7 +62,6 @@
 		58DDB8E323A514B90094B3E9 /* HistoricalPriceResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDB8E223A514B90094B3E9 /* HistoricalPriceResource.swift */; };
 		84A56D0CC9C2625BE61E2C09 /* Pods_NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E7C629F663A55CE85230A4 /* Pods_NetworkLayer.framework */; };
 		C2463333C09E053AA7B505AA /* Pods_CoinTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664677D3F0AB904C79FFB93F /* Pods_CoinTrackerTests.framework */; };
-		EB13DE2D0C3E488E1064720A /* Pods_NetworkLayer_NetworkLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629405EB5DDB25B9FA68F77C /* Pods_NetworkLayer_NetworkLayerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,40 +93,12 @@
 			remoteGlobalIDString = 58ACD2E423A535F900CF7ACE;
 			remoteInfo = "Coin Widget";
 		};
-		58ACD30523A5362300CF7ACE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58644B1D23A0D21900137378 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58ACD2FA23A5362200CF7ACE;
-			remoteInfo = DataLayer;
-		};
-		58ACD30723A5362300CF7ACE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58644B1D23A0D21900137378 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58644B2423A0D21900137378;
-			remoteInfo = CoinTracker;
-		};
 		58ACD30E23A5362300CF7ACE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58644B1D23A0D21900137378 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 58ACD2FA23A5362200CF7ACE;
 			remoteInfo = DataLayer;
-		};
-		58DDB8C723A50ACC0094B3E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58644B1D23A0D21900137378 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58DDB8BC23A50ACC0094B3E9;
-			remoteInfo = NetworkLayer;
-		};
-		58DDB8C923A50ACC0094B3E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 58644B1D23A0D21900137378 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 58644B2423A0D21900137378;
-			remoteInfo = CoinTracker;
 		};
 		58DDB8D023A50ACC0094B3E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -241,9 +208,6 @@
 		58ACD2FB23A5362200CF7ACE /* DataLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ACD2FD23A5362200CF7ACE /* DataLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
 		58ACD2FE23A5362200CF7ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58ACD30323A5362300CF7ACE /* DataLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58ACD30A23A5362300CF7ACE /* DataLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayerTests.swift; sourceTree = "<group>"; };
-		58ACD30C23A5362300CF7ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58DDB88B23A4FCF70094B3E9 /* Price+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Price+Extensions.swift"; sourceTree = "<group>"; };
 		58DDB8B223A502B50094B3E9 /* OnlineRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineRepository.swift; sourceTree = "<group>"; };
 		58DDB8B423A507BD0094B3E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -251,9 +215,6 @@
 		58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DDB8BF23A50ACC0094B3E9 /* NetworkLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkLayer.h; sourceTree = "<group>"; };
 		58DDB8C023A50ACC0094B3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58DDB8C523A50ACC0094B3E9 /* NetworkLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		58DDB8CC23A50ACC0094B3E9 /* NetworkLayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerTests.swift; sourceTree = "<group>"; };
-		58DDB8CE23A50ACC0094B3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58DDB8DA23A50AF00094B3E9 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		58DDB8DC23A50DEB0094B3E9 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		58DDB8E023A5114C0094B3E9 /* CurrentPriceResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPriceResource.swift; sourceTree = "<group>"; };
@@ -308,28 +269,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58ACD30023A5362300CF7ACE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58ACD30423A5362300CF7ACE /* DataLayer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		58DDB8BA23A50ACC0094B3E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				84A56D0CC9C2625BE61E2C09 /* Pods_NetworkLayer.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58DDB8C223A50ACC0094B3E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58DDB8C623A50ACC0094B3E9 /* NetworkLayer.framework in Frameworks */,
-				EB13DE2D0C3E488E1064720A /* Pods_NetworkLayer_NetworkLayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +355,8 @@
 				58644B2723A0D21900137378 /* CoinTracker */,
 				58644B3E23A0D21D00137378 /* CoinTrackerTests */,
 				58DDB8BE23A50ACC0094B3E9 /* NetworkLayer */,
-				58DDB8CB23A50ACC0094B3E9 /* NetworkLayerTests */,
 				58ACD2E823A535F900CF7ACE /* Coin Widget */,
 				58ACD2FC23A5362200CF7ACE /* DataLayer */,
-				58ACD30923A5362300CF7ACE /* DataLayerTests */,
 				58644B2623A0D21900137378 /* Products */,
 				70C5AC3C09DD2B270CCB9286 /* Pods */,
 				B5746076759CF4789B6B19A8 /* Frameworks */,
@@ -427,10 +369,8 @@
 				58644B2523A0D21900137378 /* CoinTracker.app */,
 				58644B3B23A0D21D00137378 /* CoinTrackerTests.xctest */,
 				58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */,
-				58DDB8C523A50ACC0094B3E9 /* NetworkLayerTests.xctest */,
 				58ACD2E523A535F900CF7ACE /* Coin Widget.appex */,
 				58ACD2FB23A5362200CF7ACE /* DataLayer.framework */,
-				58ACD30323A5362300CF7ACE /* DataLayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -518,15 +458,6 @@
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
-		58ACD30923A5362300CF7ACE /* DataLayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				58ACD30A23A5362300CF7ACE /* DataLayerTests.swift */,
-				58ACD30C23A5362300CF7ACE /* Info.plist */,
-			);
-			path = DataLayerTests;
-			sourceTree = "<group>";
-		};
 		58ACD31E23A5380A00CF7ACE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -573,15 +504,6 @@
 				58DDB8DC23A50DEB0094B3E9 /* RequestType.swift */,
 			);
 			path = NetworkLayer;
-			sourceTree = "<group>";
-		};
-		58DDB8CB23A50ACC0094B3E9 /* NetworkLayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				58DDB8CC23A50ACC0094B3E9 /* NetworkLayerTests.swift */,
-				58DDB8CE23A50ACC0094B3E9 /* Info.plist */,
-			);
-			path = NetworkLayerTests;
 			sourceTree = "<group>";
 		};
 		58DDB8DE23A510AB0094B3E9 /* Resources */ = {
@@ -741,25 +663,6 @@
 			productReference = 58ACD2FB23A5362200CF7ACE /* DataLayer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		58ACD30223A5362300CF7ACE /* DataLayerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 58ACD31523A5362300CF7ACE /* Build configuration list for PBXNativeTarget "DataLayerTests" */;
-			buildPhases = (
-				58ACD2FF23A5362300CF7ACE /* Sources */,
-				58ACD30023A5362300CF7ACE /* Frameworks */,
-				58ACD30123A5362300CF7ACE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				58ACD30623A5362300CF7ACE /* PBXTargetDependency */,
-				58ACD30823A5362300CF7ACE /* PBXTargetDependency */,
-			);
-			name = DataLayerTests;
-			productName = DataLayerTests;
-			productReference = 58ACD30323A5362300CF7ACE /* DataLayerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		58DDB8BC23A50ACC0094B3E9 /* NetworkLayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58DDB8D423A50ACC0094B3E9 /* Build configuration list for PBXNativeTarget "NetworkLayer" */;
@@ -778,27 +681,6 @@
 			productName = NetworkLayer;
 			productReference = 58DDB8BD23A50ACC0094B3E9 /* NetworkLayer.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		58DDB8C423A50ACC0094B3E9 /* NetworkLayerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 58DDB8D723A50ACC0094B3E9 /* Build configuration list for PBXNativeTarget "NetworkLayerTests" */;
-			buildPhases = (
-				94D73CAA11C658E3A01638E7 /* [CP] Check Pods Manifest.lock */,
-				58DDB8C123A50ACC0094B3E9 /* Sources */,
-				58DDB8C223A50ACC0094B3E9 /* Frameworks */,
-				58DDB8C323A50ACC0094B3E9 /* Resources */,
-				D34AEF985004EC203BEBA1E3 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				58DDB8C823A50ACC0094B3E9 /* PBXTargetDependency */,
-				58DDB8CA23A50ACC0094B3E9 /* PBXTargetDependency */,
-			);
-			name = NetworkLayerTests;
-			productName = NetworkLayerTests;
-			productReference = 58DDB8C523A50ACC0094B3E9 /* NetworkLayerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -824,17 +706,9 @@
 					58ACD2FA23A5362200CF7ACE = {
 						CreatedOnToolsVersion = 11.3;
 					};
-					58ACD30223A5362300CF7ACE = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = 58644B2423A0D21900137378;
-					};
 					58DDB8BC23A50ACC0094B3E9 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
-					};
-					58DDB8C423A50ACC0094B3E9 = {
-						CreatedOnToolsVersion = 11.3;
-						TestTargetID = 58644B2423A0D21900137378;
 					};
 				};
 			};
@@ -854,10 +728,8 @@
 				58644B2423A0D21900137378 /* CoinTracker */,
 				58644B3A23A0D21D00137378 /* CoinTrackerTests */,
 				58DDB8BC23A50ACC0094B3E9 /* NetworkLayer */,
-				58DDB8C423A50ACC0094B3E9 /* NetworkLayerTests */,
 				58ACD2E423A535F900CF7ACE /* Coin Widget */,
 				58ACD2FA23A5362200CF7ACE /* DataLayer */,
-				58ACD30223A5362300CF7ACE /* DataLayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -897,21 +769,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58ACD30123A5362300CF7ACE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		58DDB8BB23A50ACC0094B3E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58DDB8C323A50ACC0094B3E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -958,45 +816,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinTracker/Pods-CoinTracker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94D73CAA11C658E3A01638E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NetworkLayer-NetworkLayerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D34AEF985004EC203BEBA1E3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NetworkLayer-NetworkLayerTests/Pods-NetworkLayer-NetworkLayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NetworkLayer-NetworkLayerTests/Pods-NetworkLayer-NetworkLayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetworkLayer-NetworkLayerTests/Pods-NetworkLayer-NetworkLayerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DBBEB6C06B14C1EF49BE5085 /* [CP] Check Pods Manifest.lock */ = {
@@ -1104,14 +923,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58ACD2FF23A5362300CF7ACE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58ACD30B23A5362300CF7ACE /* DataLayerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		58DDB8B923A50ACC0094B3E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1120,14 +931,6 @@
 				58DDB8E323A514B90094B3E9 /* HistoricalPriceResource.swift in Sources */,
 				58DDB8DB23A50AF00094B3E9 /* SessionManager.swift in Sources */,
 				58DDB8DD23A50DEB0094B3E9 /* RequestType.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58DDB8C123A50ACC0094B3E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				58DDB8CD23A50ACC0094B3E9 /* NetworkLayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,30 +957,10 @@
 			target = 58ACD2E423A535F900CF7ACE /* Coin Widget */;
 			targetProxy = 58ACD2EF23A535F900CF7ACE /* PBXContainerItemProxy */;
 		};
-		58ACD30623A5362300CF7ACE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58ACD2FA23A5362200CF7ACE /* DataLayer */;
-			targetProxy = 58ACD30523A5362300CF7ACE /* PBXContainerItemProxy */;
-		};
-		58ACD30823A5362300CF7ACE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58644B2423A0D21900137378 /* CoinTracker */;
-			targetProxy = 58ACD30723A5362300CF7ACE /* PBXContainerItemProxy */;
-		};
 		58ACD30F23A5362300CF7ACE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 58ACD2FA23A5362200CF7ACE /* DataLayer */;
 			targetProxy = 58ACD30E23A5362300CF7ACE /* PBXContainerItemProxy */;
-		};
-		58DDB8C823A50ACC0094B3E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58DDB8BC23A50ACC0094B3E9 /* NetworkLayer */;
-			targetProxy = 58DDB8C723A50ACC0094B3E9 /* PBXContainerItemProxy */;
-		};
-		58DDB8CA23A50ACC0094B3E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 58644B2423A0D21900137378 /* CoinTracker */;
-			targetProxy = 58DDB8C923A50ACC0094B3E9 /* PBXContainerItemProxy */;
 		};
 		58DDB8D123A50ACC0094B3E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1505,42 +1288,6 @@
 			};
 			name = Release;
 		};
-		58ACD31623A5362300CF7ACE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DataLayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.DataLayerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTracker.app/CoinTracker";
-			};
-			name = Debug;
-		};
-		58ACD31723A5362300CF7ACE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DataLayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.DataLayerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTracker.app/CoinTracker";
-			};
-			name = Release;
-		};
 		58DDB8D523A50ACC0094B3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C783EABA99C30C7B68F8704C /* Pods-NetworkLayer.debug.xcconfig */;
@@ -1604,44 +1351,6 @@
 			};
 			name = Release;
 		};
-		58DDB8D823A50ACC0094B3E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D50CD23C533FED130AC48667 /* Pods-NetworkLayer-NetworkLayerTests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NetworkLayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.NetworkLayerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTracker.app/CoinTracker";
-			};
-			name = Debug;
-		};
-		58DDB8D923A50ACC0094B3E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1353A7FC264D15B6F25C21F /* Pods-NetworkLayer-NetworkLayerTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NetworkLayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.NetworkLayerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTracker.app/CoinTracker";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1690,29 +1399,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58ACD31523A5362300CF7ACE /* Build configuration list for PBXNativeTarget "DataLayerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				58ACD31623A5362300CF7ACE /* Debug */,
-				58ACD31723A5362300CF7ACE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		58DDB8D423A50ACC0094B3E9 /* Build configuration list for PBXNativeTarget "NetworkLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58DDB8D523A50ACC0094B3E9 /* Debug */,
 				58DDB8D623A50ACC0094B3E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		58DDB8D723A50ACC0094B3E9 /* Build configuration list for PBXNativeTarget "NetworkLayerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				58DDB8D823A50ACC0094B3E9 /* Debug */,
-				58DDB8D923A50ACC0094B3E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
