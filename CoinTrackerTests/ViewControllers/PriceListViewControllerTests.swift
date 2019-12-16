@@ -18,6 +18,10 @@ class PriceListViewControllerTests: XCTestCase {
         XCTAssertTrue(makeSUT().tableView.dataSource is PriceListViewController)
     }
     
+    func test_tableViewDelegateIsController_isTrue() {
+        XCTAssertTrue(makeSUT().tableView.delegate is PriceListViewController)
+    }
+    
     func test_numberOfCells_isCorrect() {
         let viewController = makeSUT()
         XCTAssertEqual(viewController.tableView(viewController.tableView, numberOfRowsInSection: 0), 8)

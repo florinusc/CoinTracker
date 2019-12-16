@@ -17,6 +17,10 @@ class DetailViewControllerTests: XCTestCase {
         XCTAssertTrue(makeSUT().tableView.dataSource is DetailViewController)
     }
     
+    func test_tableViewDelegateIsController_isTrue() {
+        XCTAssertTrue(makeSUT().tableView.delegate is DetailViewController)
+    }
+    
     func test_numberOfCells_isCorrect() {
         let viewController = makeSUT()
         XCTAssertEqual(viewController.tableView(viewController.tableView, numberOfRowsInSection: 0), 3)
