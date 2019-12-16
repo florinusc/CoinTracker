@@ -45,12 +45,12 @@ final class PriceListViewController: UIViewController, ViewModelBased {
     
     private func getData() {
         viewModel.getData { [weak self] (error) in
+            self?.hideLoadingView()
             if let error = error {
                 self?.presentAlert(for: error)
                 return
             }
             self?.tableView.reloadData()
-            self?.hideLoadingView()
         }
     }
     
